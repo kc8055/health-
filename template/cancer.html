@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+  <title>Cancer_pred</title>
+</head>
+<style>
+  #main-footer {
+    color: #FFFFFF;
+    font-family: "Segoe UI";
+    background: #2B2B2B;
+    text-align: center;
+    margin-top: 75px;
+    padding: 16px;
+    bottom: 8px;
+  }
+</style>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="background-color: black;">
+      <div class="container">
+
+        <img style="width: 28px ; margin-right:11px" src="../static/Images related to the project/djj.png" />
+
+
+
+        <a class="navbar-brand mr-4" href="/">Human Health Prognosis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+          aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/">Home</a>
+            <a class="nav-item nav-link" href="/about">About</a>
+            <a class="nav-item nav-link" href="/cancer">Cancer</a>
+            <a class="nav-item nav-link" href="/diabetes">Diabetes</a>
+            <a class="nav-item nav-link" href="/heart">Heart</a>
+            <a class="nav-item nav-link" href="/liver">Liver</a>
+            <a class="nav-item nav-link" href="/kidney">Kidney</a>
+            <a class="nav-item nav-link" href="/Malaria">Malaria</a>
+            <a class="nav-item nav-link" href="/Pneumonia">Pneumonia</a>
+          </div>
+          <!-- Navbar Right Side 
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register</a>
+        </div>-->
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <h2> Know Your Chances Of Getting A Cancer In One Click!</h2>
+    <br>
+    <h3 button type="button" class="btn btn-warning">Enter the Following Parameters :</h3>
+    <form action="/result" method="POST">
+
+
+      <div style="display: flex;">
+        <div>
+          <input type="text" size="50" id="Radius_mean" placeholder="Radius_mean" name="Radius_mean">
+          <br>
+
+
+          <input type="text" size="50" id="Texture_mean" placeholder="Texture_mean" name="Texture_mean">
+          <br>
+
+
+          <input type="text" size="50" id="Perimeter_mean" placeholder="Perimeter_mean" name="Perimeter_mean">
+          <br>
+
+
+          <input type="text" size="50" id="Area_mean" placeholder="Area_mean" name="Area_mean">
+          <br>
+
+
+          <input type="text" size="50" id="Smoothness_mean" placeholder="Smoothness_mean" name="Smoothness_mean">
+          <br>
+
+
+          <input type="text" size="50" id="Compactness_mean" placeholder="Compactness_mean" name="Compactness_mean">
+          <br>
+
+
+          <input type="text" size="50" id="Concavity_mean" placeholder="Concavity_mean" name="Concavity_mean">
+          <br>
+
+
+          <input type="text" size="50" id="concave points_mean" placeholder="Concave points_mean"
+            name="concave points_mean">
+          <br>
+
+
+          <input type="text" size="50" id="symmetry_mean" placeholder="Symmetry_mean" name="symmetry_mean">
+          <br>
+
+
+          <input type="text" size="50" id="fractal_dimension_mean" placeholder="Fractal_dimension_mean"
+            name="fractal_dimension_mean">
+          <br>
+
+
+          <input type="text" size="50" id="radius_se" placeholder="Radius_se" name="radius_se">
+          <br>
+
+
+          <input type="text" size="50" id="texture_se" placeholder="Texture_se" name="texture_se">
+          <br>
+
+
+          <input type="text" size="50" id="perimeter_se" placeholder="Perimeter_se" name="perimeter_se">
+          <br>
+
+
+          <input type="text" size="50" id="area_se" placeholder="Area_se" name="area_se">
+          <br>
+
+
+          <input type="text" size="50" id="smoothness_se" placeholder="Smoothness_se" name="smoothness_se">
+          <br>
+
+
+          <input type="text" size="50" id="compactness_se" placeholder="Compactness_se" name="compactness_se">
+          <br>
+
+
+          <input type="text" size="50" id="concavity_se" placeholder="Concavity_se" name="concavity_se">
+          <br>
+
+
+          <input type="text" size="50" id="concave points_se" placeholder="Concave points_se" name="concave points_se">
+          <br>
+
+
+          <input type="text" size="50" id="symmetry_se" placeholder="Symmetry_se" name="symmetry_se">
+          <br>
+
+
+          <input type="text" size="50" id="fractal_dimension_se" placeholder="Fractal_dimension_se"
+            name="fractal_dimension_se">
+          <br>
+
+
+          <input type="text" size="50" id="radius_worst" placeholder="Radius_worst" name="radius_worst">
+          <br>
+
+
+          <input type="text" size="50" id="texture_worst" placeholder="Texture_worst" name="texture_worst">
+          <br>
+
+
+          <input type="text" size="50" id="perimeter_worst" placeholder="Perimeter_worst" name="perimeter_worst">
+          <br>
+
+
+          <input type="text" size="50" id="area_worst" placeholder="Area_worst" name="area_worst">
+          <br>
+
+
+          <input type="text" size="50" id="smoothness_worst" placeholder="Smoothness_worst" name="smoothness_worst">
+          <br>
+
+
+          <input type="text" size="50" id="compactness_worst" placeholder="Compactness_worst" name="compactness_worst">
+          <br>
+
+
+          <input type="text" size="50" id="concavity_worst" placeholder="Concavity_worst" name="concavity_worst">
+          <br>
+
+
+          <input type="text" size="50" id="concave points_worst" placeholder="Concave points_worst"
+            name="concave points_worst">
+          <br>
+
+
+          <input type="text" size="50" id="symmetry_worst" placeholder="Symmetry_worst" name="symmetry_worst">
+          <br>
+
+
+          <input type="text" size="50" id="fractal_dimension_worst" placeholder="Fractal_dimension_worst"
+            name="fractal_dimension_worst">
+          <br>
+          <br>
+
+
+
+          <input type="submit" class="btn btn-primary" value="Predict"><br><br>
+        </div>
+        <img src="../static/Images related to the project/breast.jpg" height="653px" style="margin-left: 140px;
+    padding-left: 70px;
+    vertical-align: middle;
+    border-style: none;
+    padding-bottom: 151px;
+    margin-top: -42px;" alt="">
+      </div>
+
+
+    </form>
+
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <footer id="main-footer">
+    Copyright &copy; 2021
+  </footer>
+</body>
+
+</html>
